@@ -83,6 +83,16 @@ To run the model with a GPU, you will need [nvidia-docker](https://github.com/NV
 OUTPUT_DIR=./output/ INPUT_DIR=/path/to/input/docs DEVICE=cuda:0 docker-compose -f docker-compose-standalone-GPU.yml -f docker-compose_visualizer.yml up 
 ```
 
+### Running only the visualizer
+
+It is also possible to run only the visualizer components on previously processed PDFs. This only requires defining the `OUTPUT_DIR` environmental variable, pointing it to the specified directory:
+
+```
+OUTPUT_DIR=./output/ docker-compose -f docker-compose_visualizer.yml up
+```
+
+By default, this setup forwards local port 5002 to the web service running on port 80 within a docker container. To view locally, point your browser to: http://localhost:5002
+
 ## Common issues
 
 cosmos image exits with an exit code of 137
