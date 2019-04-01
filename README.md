@@ -16,7 +16,7 @@ in GPU mode, this is closer to 5 minutes.
 
 Additionally, at least 9 GB of memory must be made available to the running docker container.
 
-For more information on allocating more resources to your docker instance, see https://docs.docker.com/docker-for-mac/#advanced and
+For more information on allocating resources to docker, see https://docs.docker.com/config/containers/resource_constraints/.
 
 ## Running the model
 Three environment variables must be defined needed to dictate the behavior of the image:
@@ -97,6 +97,8 @@ It is recommended to run `docker-compose -f docker-compose_visualizer.yml down` 
 
 ## Common issues
 
-cosmos image exits with an exit code of 137
-    This is likely due to the model application process being killed by a memory manager. Often it means that docker has not been provisioned enough memory.
+cosmos image execution stops with an exit code of 137.
+    This is likely due to the model application process being killed by a memory manager. Often it means that docker has not been provisioned enough memory. See https://docs.docker.com/config/containers/resource_constraints/ and check the memory allocated to docker on your system.
 
+Delay between exit code 0 (succesful model completion) and availability of data in visualizer.
+After successful execution of the Cosmos pipeline, there is a short delay before the output is made available in the visualizer. The visualizer accessible at http://localhost:5002 will report non-zero summary KB stats (e.g., more than 0 documents) once the database has been populated.
