@@ -57,7 +57,7 @@ elif [ "$DEVICE" == "CPU" ]; then
 elif [ "$DEVICE" == "GPU" ]; then
     echo "Running $MODE on device $DEVICE, input $INPUT_DIR and writing output to $OUTPUT_DIR."
 
-    OUTPUT_DIR=$OUTPUT_DIR INPUT_DIR=$INPUT_DIR DEVICE=cuda:0 docker-compose -f docker-compose-standalone-CPU.yml up --abort-on-container-exit
+    OUTPUT_DIR=$OUTPUT_DIR INPUT_DIR=$INPUT_DIR DEVICE=cuda:0 docker-compose -f docker-compose-standalone-GPU.yml up --abort-on-container-exit
     if [ "$MODE" == "FULL" ]; then
         run_visualizer
     else
