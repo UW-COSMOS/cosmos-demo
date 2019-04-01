@@ -1,7 +1,7 @@
 # cosmos-demo
 
 We provide a docker image which contains all of the requsite code and models to
-apply the COSMOS extraction pipeline to all PDFs within a specified directory.
+apply the COSMOS extraction pipeline (https://github.com/UW-COSMOS/Cosmos) to all PDFs within a specified directory.
 
 First, clone this repository to get the necessary docker-compose files and some example input:
 
@@ -49,7 +49,7 @@ At the point, all of the models' output will be in the specified output director
     html/ -- Directory of HTML representations of the pages, including unicode and tesseract text representations.
     images/ -- Page-level PNG images
 
-It is recommended to run `docker-compose -f docker-compse-standalone-CPU.yml` (or `docker-compose -f docker-compse-standalone-CPU.yml down`) between runs to prevent unexpected caching issues.
+It is recommended to run `docker-compose -f docker-compose-standalone-CPU.yml` (or `docker-compose -f docker-compse-standalone-CPU.yml down`) between runs to prevent unexpected caching issues.
 
 ## Visualizer components
 
@@ -57,7 +57,7 @@ In addition to the model, we provide an additional suite of docker images which
 can be used to visualize the resulting vision segmentations, along with
 extracted figure, table, and equation knowledgebases.
 
-By default, this setup forwards local port 5002 to the web service running on port 80 within a docker container.
+By default, this setup forwards local port 5002 to the web service running on port 80 within a docker container. To view locally, point your browser to: http://localhost:5002
 
 These components can be run alongside the pipeline and will automatically update when data become available.
 To do this, you must also invoke the visualizer-specific docker-compose setup on top of the normal pipeline, as follows below.
