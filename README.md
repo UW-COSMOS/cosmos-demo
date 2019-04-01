@@ -122,7 +122,7 @@ cosmos image execution stops with an exit code of 137.
 Delay between exit code 0 (succesful model completion) and availability of data in visualizer.
 After successful execution of the Cosmos pipeline, there is a short delay before the output is made available in the visualizer. The visualizer accessible at http://localhost:5002 will report non-zero summary KB stats (e.g., more than 0 documents) once the database has been populated.
 
-# License and Acknowledgements
+### License and Acknowledgements
 All development work supported by DAPRA ASKE HR00111990013 and UW-Madison.
 
 Licensed under the Apache License, Version 2.0 (the "License");
