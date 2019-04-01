@@ -16,9 +16,28 @@ in GPU mode, this is closer to 5 minutes.
 
 Additionally, at least 9 GB of memory must be made available to the running docker container.
 
-For more information on allocating more resources to your docker instance, see https://docs.docker.com/docker-for-mac/#advanced and
+Docker and docker-compose must be installed, with at least these resources allocated to the docker instance. For more information on allocating more resources to docker, see https://docs.docker.com/docker-for-mac/#advanced and
 
 ## Running the model
+The `run_cosmos.sh` wrappers script eases usage. Two environment variables dictate the `INPUT_DIR` (directory of PDFs to run) and `OUTPUT_DIR` (directory where model outputs are stored). There are two arguments that should be specified. The first argument specifies the mode:
+
+ - `FULL` - run both the model and the visualization components (Required environment variables: `INPUT_DIR`, `OUTPUT_DIR`)
+ - `MODEL` - run the model, storing segmentation and knowledgebase results to the specified output (Required environment variables: `INPUT_DIR`, `OUTPUT_DIR`)
+ - `VIZ` - run the visualization components on the specified  (Required environment variables: `OUTPUT_DIR`)
+
+The second argument specifies the device to run on:
+
+- `CPU` utilizes just CPU (multithreaded to use 4 cores by default)
+- `GPU` utilizes a GPU [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) and correct drivers for a NVIDIA card must be installed.
+
+So to run the full pipeline and spawn a visualization service (listening on port 5002 on localhost), using the documents in `./input/`:
+
+```
+INPUT_DIR=./input OUTPUT_DIR=./output ./run_cosmos.sh FULL CPU
+```
+
+## Running the model via docker-compose
+If preferred, the docker-compose files can be used directly to run the processes.
 Three environment variables must be defined needed to dictate the behavior of the image:
 
 `INPUT_DIR` should point to the directory of PDFs on the host machine
