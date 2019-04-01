@@ -52,7 +52,7 @@ At the point, all of the models' output will be in the specified output director
     html/ -- Directory of HTML representations of the pages, including unicode and tesseract text representations.
     images/ -- Page-level PNG images
 
-It is recommended to run `docker-compose -f docker-compose-standalone-CPU.yml` (or `docker-compose -f docker-compse-standalone-CPU.yml down`) between runs to prevent unexpected caching issues.
+It is recommended to run `docker-compose -f docker-compose-standalone-CPU.yml down` (or `docker-compose -f docker-compse-standalone-CPU.yml down`) between runs to prevent unexpected caching issues.
 
 ## Visualizer components
 
