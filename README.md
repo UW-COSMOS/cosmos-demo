@@ -93,6 +93,8 @@ OUTPUT_DIR=./output/ docker-compose -f docker-compose_visualizer.yml up
 
 By default, this setup forwards local port 5002 to the web service running on port 80 within a docker container. To view locally, point your browser to: http://localhost:5002
 
+It is recommended to run `docker-compose -f docker-compose_visualizer.yml down` between runs to prevent unexpected caching issues.
+
 ## Common issues
 
 cosmos image exits with an exit code of 137
