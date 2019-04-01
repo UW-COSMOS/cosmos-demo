@@ -34,6 +34,9 @@ OUTPUT_DIR=./output/ INPUT_DIR=/path/to/input/docs DEVICE=cpu docker-compose -f 
 
 
 ### Running the model in GPU mode
+
+To run the model with a GPU, you will need [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) installed along with the correct drivers for your GPU card. Only NVIDIA cards are supported.
+
 ```
 OUTPUT_DIR=./output/ INPUT_DIR=/path/to/input/docs DEVICE=cuda:0 docker-compose -f docker-compose-standalone-GPU.yml up --abort-on-container-exit
 ```
