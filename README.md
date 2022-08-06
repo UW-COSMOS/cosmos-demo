@@ -10,7 +10,7 @@ First, clone this repository to get the necessary docker-compose files and some 
 
 ## Resource usage and runtime
 The model can be run on either GPU or CPU but we **strongly** suggest utilizing GPUs
-if available, as the speed increate in model application drastically reduces overall runtime.
+if available, as the speed increase in model application drastically reduces overall runtime.
 In CPU only mode, a typical document will take on the order of 30 minutes, while
 in GPU mode, this is closer to 5 minutes.
 
