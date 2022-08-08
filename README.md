@@ -1,6 +1,6 @@
 # cosmos-demo
 
-We provide a docker image which contains all of the requsite code and models to
+We provide a docker image which contains all of the requisite code and models to
 apply the COSMOS extraction pipeline (https://github.com/UW-COSMOS/Cosmos) to all PDFs within a specified directory.
 
 First, clone this repository to get the necessary docker-compose files and some example input:
